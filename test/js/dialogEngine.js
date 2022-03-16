@@ -37,6 +37,9 @@ function do_action(action){
      else if (action == 2) {
           sessionStorage.setItem("cafe", 0);
      }
+     else if (action == 3) {
+          sessionStorage.setItem("telephone", 1);
+     }
 }
 
 function affiche_dialogue(Dialog, num){
@@ -96,4 +99,5 @@ function affiche_dialogue(Dialog, num){
      // container.innerHTML = '';
      container.empty();
      container.append(lines);
+     AffichageHUD();
 }

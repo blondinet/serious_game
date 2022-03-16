@@ -1,7 +1,32 @@
 
-var inventaire = new Object();
-inventaire.argent = 0;
-inventaire.cafe = 0
+
+
+AffichageHUD();
+
+function AffichageHUD(){
+     // var newdiv1 = $( "<div id='object1'></div>" );
+     // var newdiv2 = document.createElement( "div" );
+     // var existingdiv1 = document.getElementById( "foo" );
+
+
+     $("backpack").empty();
+     // new_div = document.createElement( "div" );
+     // new_div.prepend("<div><img src='./images/inventaire.png' style='position:absolute; opacity: 0.5;'></div>")
+     // $('#theDiv').prepend('<img id="theImg" src="theImg.png" />')
+
+     // $( "body" ).append( $newdiv1, [ newdiv2, existingdiv1 ] );
+     let back = "<div id='backpack' style='position:absolute; left:2vw; top:60vh; max-width: 20vw; height: auto;'>"+
+     "<img src='./images/inventaire.png' style='opacity: 0.75;'>";
+
+     if(sessionStorage.getItem("cafe") == 1) {
+          back += "<img id='cafe' src='./images/cafe.png' style='position:absolute; left:5vw; top:13vh; max-width: 6vw; height: auto'/>";
+     }
+     back += "</img></div>";
+
+
+
+     $("html").append(back);
+}
 
 function traitement(){
      sessionStorage.setItem("cafe", 0);
@@ -112,9 +137,59 @@ function dialogue_fin_tuto(){
                { id: '2.0', text: "…" }
           ],
           next: function (linePicked) {
+               return "3";
+          }
+     }, {
+          id: '3',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '3.0', text: "Je rigole c’est bon ! Qu’est-ce qui vous amène ?" }
+          ],
+          next: function (linePicked) {
+               return "4";
+          }
+     }, {
+          id: '4',
+          speaker: 'Vous',
+          type: 'inactive',
+          lines: [
+               { id: '4.0', text: "Je suis actuellement à la recherche d’un stage et je voulais savoir si vous aviez des offres à pourvoir dans le domaine du design, en accord avec mes compétences ?" }
+          ],
+          next: function (linePicked) {
+               return "5";
+          }
+     }, {
+          id: '5',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '5.0', text: "Je crois pouvoir vous donner quelques pistes de recherches…, regardez votre téléphone et allez sur l’application LinkeudeIne. J’ai mis à jour 3 offres qui pourraient vous intéresser." }
+          ],
+          next: function (linePicked) {
+               return "6";
+          }
+     }, {
+          id: '6',
+          speaker: 'Vous',
+          type: 'inactive',
+          action:3,
+          lines: [
+               { id: '6.0', text: "Merci beaucoup je vais regarder ça. Bonne journée !" }
+          ],
+          next: function (linePicked) {
+               return "7";
+          }
+     }, {
+          id: '7',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '7.0', text: "Fermez bien la porte en partant…" }
+          ],
+          next: function (linePicked) {
                return "-1";
           }
-
      }];
 }
 
