@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="fr">
+     <head>
+          <meta charset="utf-8">
+          <link rel="stylesheet" href="css/style.css" />
+          <link rel="stylesheet" href="css/lity.css" />
+          <link rel="stylesheet" href="css/dialogue.css" />
+
+          <link rel="shortcut icon" href="./">
+
+          <script src="js/consignes.js"></script>
+          <script src="js/imageMapResizer.js"></script>
+          <script src="js/jquery.js"></script>
+          <script src="js/lity.js"></script>
+          <script src="js/dialog_ux.js"></script>
+          <script src="js/dialogEngine.js"></script>
+     </head>
+     <body>
+          <div id="image" width="100%">
+
+               <div id="dialogue"></div>
+               <img src="images/bureau_client.jpg"  usemap="#image-map">
+               <div id="dialogContainer">
+               </div>
+
+               <map name="image-map">
+                    <area onclick="lancement_dialogue(3)" style="cursor: help;" coords="990,1328,1993,3943" shape="rect">
+                    <area href="page_bureau_UX.html" style="cursor: n-resize;" coords="7973,1222,6814,3512" shape="rect">
+               </map>
+          </div>
+
+          <!-- <div id="consignes"> -->
+          <!-- </div> -->
+          <div id="inline" style="overflow:auto;background:#FDFDF6;padding:20px;max-width:100%;border-radius:6px" class="lity-hide">
+               Inline content
+          </div>
+
+
+
+
+          <script>
+               // afficheMessage("Selectionner porte");
+               imageMapResize();
+
+          </script>
+     </body>
+</html>

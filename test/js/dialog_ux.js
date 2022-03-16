@@ -85,8 +85,8 @@ function dialogue_ux_welcome(){
        speaker: 'Vous',
        type: 'interactive',
        lines: [
-            { id: '2.0', text: "Qu’est ce qu’une spécification fonctionnelle ?" },
-            { id: '2.1', text: "Qu’est ce qu’une maquette ?"},
+            { id: '2.0', text: "Qu’est-ce qu’une spécification fonctionnelle ?" },
+            { id: '2.1', text: "Qu’est-ce qu’une maquette ?"},
             { id: '2.2', text: "Des retours ?"},
             { id: '2.3', text: "D’accord, je m’y mets."}
        ],
@@ -242,7 +242,7 @@ function dialogue_ux_client_spec(){
        }
   }, {
        id: '4',
-       speaker: 'Head UX Designer',
+       speaker: 'Client',
        type: 'inactive',
        lines: [
             { id: '3.0', text: "Je travaille à la fois pour des professionnels et des particuliers. J’ai un public assez vaste, dont des personnes qui ne sont pas forcément très habituées aux médias numériques." }
@@ -252,7 +252,7 @@ function dialogue_ux_client_spec(){
        }
   }, {
        id: '5',
-       speaker: 'Head UX Designer',
+       speaker: 'Client',
        type: 'inactive',
        lines: [
             { id: '4.0', text: "Mon objectif est bien sûr de vendre mes pièces, mais l’idée du site c’est de montrer le style des œuvres que je produis pour donner envie à mes clients de venir les voir sur place pour les acheter, plutôt que de les vendre en ligne." }
@@ -262,7 +262,7 @@ function dialogue_ux_client_spec(){
        }
   }, {
        id: '6',
-       speaker: 'Head UX Designer',
+       speaker: 'Client',
        type: 'inactive',
        lines: [
             { id: '5.0', text: "Je n’y connais rien du tout, et c’est bien pour ça que je suis venu travailler avec vous. J’ai besoin de quelque chose qui soit facile à maintenir, avec un compte administrateur par exemple." }
@@ -272,7 +272,7 @@ function dialogue_ux_client_spec(){
        }
   }, {
        id: '7',
-       speaker: 'Head UX Designer',
+       speaker: 'Client',
        type: 'inactive',
        lines: [
             { id: '5.0', text: "J’aimerais quelque chose d’élégant, qui rappelle le matériau naturel du bois que j’utilise." }
