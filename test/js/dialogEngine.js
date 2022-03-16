@@ -40,14 +40,16 @@ function affiche_dialogue(Dialog, num){
      // Création d'un élément ligne div si interactif, sinon ol
      var lines = document.createElement(isInteractive ? 'ol' : 'div');
 
-     lines.className = dialogNode.speaker;
+     // lines.className = dialogNode.speaker;
+     lines.className = "line_dialogue";
 
      if (dialogNode && dialogNode.lines) {
           dialogNode.lines.forEach(function (line) {
                var newLine = document.createElement(isInteractive ? 'li' : 'div');
                newLine.innerHTML = line.text;
                newLine.addEventListener('click', function () {
-                    var next = dialogNode.next();
+                    var next = dialogNode.next(line.id);
+
                     if(next == "-1"){
                          suppr_ecran_dialogue(Dialog);
                          container.empty();
@@ -62,12 +64,24 @@ function affiche_dialogue(Dialog, num){
                     link.innerHTML = line.urlText || line.url;
                     newLine.appendChild(document.createElement('br'));
                     newLine.appendChild(link);
+                    newLine.style.cssText = "width:50%;margin: 0px;";
                }
+               newLine.style.cssText = "cursor: help;";
+               newLine.onmouseover = function(){ this.style.backgroundColor ="purple" };
+               newLine.onmouseout = function(){ this.style.backgroundColor ="" };
+
+
                lines.appendChild(newLine);
           });
+          // let p = document.createElement("p");
+
+          let speaker = document.createElement("h5");
+          speaker.style.cssText = "text-align:left;min-width:1vw;max-width:3vw;margin: 0px; padding:1vw; border: 1px solid black";
+          speaker.appendChild(document.createTextNode(dialogNode.speaker));
+
+          lines.prepend(speaker);
      }
      // container.innerHTML = '';
      container.empty();
-     console.log(container);
      container.append(lines);
 }

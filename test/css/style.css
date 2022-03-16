@@ -1,24 +1,5 @@
-#image{
-height: 85%;
-background-color: gray;
-text-align: center;
-}
-
-#consignes{
-font-family: sans-serif;
-height : 15%;
-padding-left: 5%;
-padding-right: 5%;
-text-align: center;
-font-size: 5vh;}
-
-#image img {
-height: 75vh;
-width: auto;
-}
-
-#image area:link {
-cursor : default;
+img{
+     width:100%;
 }
 
 #go, #inline {

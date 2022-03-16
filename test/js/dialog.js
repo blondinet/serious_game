@@ -1,4 +1,8 @@
 
+var inventaire = new Object();
+inventaire.argent = 0;
+inventaire.cafe = 0
+
 function create_dialog(tab_nodes) {
      var Dialog = {
           createAndAddNode: function (textLines) {
@@ -53,8 +57,103 @@ function dialog(num_dialog){
           case 4:
                return dialogue_porte_ouvertFull();
           break;
+          case 5:
+               return dialogue_tuto();
+          break;
+          case 6:
+               return dialogue_tuto_2();
+          break;
      }
 }
+
+function dialogue_tuto(){
+     return [{
+          id: '0',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '0.0', text: "... Mh ? Qu’est-ce que vous voulez ?" }
+          ],
+          next: function (linePicked) {
+               return "1";
+          }
+     }, {
+          id: '1',
+          speaker: 'Vous',
+          type: 'inactive',
+          lines: [
+               { id: '1.0', text: "Je suis actuellement à la recherche d’un stage et…" }
+          ],
+          next: function (linePicked) {
+               return "2";
+          }
+     }, {
+          id: '2',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '2.0', text: "Je suis fatiguée, je me prendrais bien un petit remontant, sans cela je crois ne pas pouvoir vous aider…" }
+          ],
+          next: function (linePicked) {
+               return "3";
+          }
+     }, {
+          id: '3',
+          speaker: 'Vous',
+          type: 'interactive',
+          lines: [
+               { id: '3.0', text: "Je vais acheter un café (une machine est dans le couloir)" },
+               { id: '3.1', text: "Je vous apporte de l’eau"},
+               { id: '3.2', text: "Je vous apporte un chocolat "}
+          ],
+          next: function (linePicked) {
+               if (linePicked === '3.0') {
+                    return "-1";
+               }
+               if (linePicked === '3.1') {
+                    return "4";
+               }
+               return "4";
+          }
+     }, {
+          id: '4',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '4.0', text: "Je prefère autre chose" }
+          ],
+          next: function (linePicked) {
+               return "3";
+          }
+     },]
+}
+
+
+function dialogue_tuto_2(){
+     return [{
+          id: '0',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '0.0', text: "Vous prenez un café en échange d'un dollars" }
+          ],
+          next: function (linePicked) {
+               return "1";
+          }
+     }, {
+          id: '1',
+          speaker: 'Vous',
+          type: 'inactive',
+          lines: [
+               { id: '1.0', text: "Le café est servi" }
+          ],
+          next: function (linePicked) {
+               return "-1";
+          }
+     }]
+}
+
+
 
 function dialogue_porte_ouvertFull(){
      return [{
