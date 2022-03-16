@@ -3,6 +3,17 @@ var inventaire = new Object();
 inventaire.argent = 0;
 inventaire.cafe = 0
 
+function traitement(){
+     sessionStorage.setItem("cafe", 0);
+     sessionStorage.setItem("monnaie", 1);
+     sessionStorage.setItem("fiche", "");
+     sessionStorage.setItem("document_speciale", "");
+     sessionStorage.setItem("magazine", "");
+     sessionStorage.setItem("note_retour", "");
+}
+
+
+
 function create_dialog(tab_nodes) {
      var Dialog = {
           createAndAddNode: function (textLines) {
@@ -58,12 +69,53 @@ function dialog(num_dialog){
                return dialogue_porte_ouvertFull();
           break;
           case 5:
-               return dialogue_tuto();
+               if(sessionStorage.getItem("cafe") == 1) {
+                    return dialogue_fin_tuto();
+               }
+               else {
+                    return dialogue_tuto();
+               }
           break;
           case 6:
                return dialogue_tuto_2();
           break;
      }
+}
+
+function dialogue_fin_tuto(){
+     return [{
+          id: '0',
+          speaker: 'Vous',
+          type: 'inactive',
+          action: 2,
+          lines: [
+               { id: '0.0', text: "Donner un cafe" }
+          ],
+          next: function (linePicked) {
+               return "1";
+          }
+     }, {
+          id: '1',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '1.0', text: "Je vous remercie. J’espère qu’il est sans sucre !" }
+          ],
+          next: function (linePicked) {
+               return "2";
+          }
+     }, {
+          id: '2',
+          speaker: 'Vous',
+          type: 'inactive',
+          lines: [
+               { id: '2.0', text: "…" }
+          ],
+          next: function (linePicked) {
+               return "-1";
+          }
+
+     }];
 }
 
 function dialogue_tuto(){
@@ -134,6 +186,7 @@ function dialogue_tuto_2(){
           id: '0',
           speaker: 'RH',
           type: 'inactive',
+          action: 1,
           lines: [
                { id: '0.0', text: "Vous prenez un café en échange d'un dollars" }
           ],

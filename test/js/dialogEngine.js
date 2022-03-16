@@ -30,6 +30,15 @@ function suppr_ecran_dialogue(Dialog){
      // affiche_dialogue(Dialog, "0");
 }
 
+function do_action(action){
+     if(action == 1){
+          sessionStorage.setItem("cafe", 1);
+     }
+     else if (action == 2) {
+          sessionStorage.setItem("cafe", 0);
+     }
+}
+
 function affiche_dialogue(Dialog, num){
      // On récup le dialogue courant
      var dialogNode = Dialog.getNode(num);
@@ -44,6 +53,9 @@ function affiche_dialogue(Dialog, num){
      lines.className = "line_dialogue";
 
      if (dialogNode && dialogNode.lines) {
+          if(dialogNode.action) {
+               do_action(dialogNode.action);
+          }
           dialogNode.lines.forEach(function (line) {
                var newLine = document.createElement(isInteractive ? 'li' : 'div');
                newLine.innerHTML = line.text;
