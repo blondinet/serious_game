@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="fr">
+<html lang="fr" style="width:100%; height:100%; margin:0px">
      <head>
           <meta charset="utf-8">
           <link rel="stylesheet" href="css/style.css" />
@@ -16,21 +16,20 @@
           <script src="js/dialog.js"></script>
           <script src="js/dialogEngine.js"></script>
      </head>
-     <body>
-          <div id="image" width="100%">
-
-               <div id="dialogue"></div>
-               <img src="images/test_1.jpg"  usemap="#image-map">
-               <div id="dialogContainer">
+     <body style="width:100%; height:100%; margin:0px">
+          <div style="width:100%; height:100%; background-color: black; color:white; text-align:center">
+               <div style="width:50%; margin:auto; padding-top:15%; height:50%;">
+                    Bienvenu.e [pseudo] ! Vous êtes en première année de master sciences cognitives et vous devez vous préparez
+                    à votre future vie professionnelle. Ce petit jeu vise à vous familiariser avec les métiers du design.
+                    Il vous aidera à rendre compte des compétences et connaissances à mettre en lumière,
+                    afin de maximiser vos chances de trouver le stage de vos rêves ! Préparez-vous à vous former par
+                    l’accomplissement de tâches diverses et variées liées aux métiers du design.
                </div>
-
-               <map name="image-map">
-                   <area onclick="lancement_dialogue(1)" coords="398,730,1159,2102" shape="rect">
-                   <area onclick="lancement_dialogue(2)" coords="1782,716,2564,2096" shape="rect">
-                   <area onclick="lancement_dialogue(3)" coords="3200,736,3962,2109" shape="rect">
-                   <area href="page_1.html" coords="4525,710,5340,2102" shape="rect">
-                   <area onclick="lancement_dialogue(4)" coords="5996,696,6738,2056" shape="rect">
-               </map>
+               <a href="page_tuto.html">
+                    <button  style="width :15%; height: 5%; cursor: help;">
+                         Rejoindre l'aventure
+                    </button>
+               </a>
           </div>
 
           <!-- <div id="consignes"> -->
