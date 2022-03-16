@@ -151,8 +151,8 @@ function dialogue_ux_designer_help(){
        speaker: 'Vous',
        type: 'interactive',
        lines: [
-            { id: '2.0', text: "Non, pas encore." },
-            { id: '2.1', text: "Oui je les ai !"}
+            { id: '1.0', text: "Non, pas encore." },
+            { id: '1.1', text: "Oui je les ai !"}
        ],
        next: function (linePicked) {
             if (linePicked === '2.0') {
@@ -199,7 +199,7 @@ function dialogue_ux_client_spec(){
        speaker: 'Vous',
        type: 'inactive',
        lines: [
-            { id: '2.0', text: "Bonjour, Monsieur. Commençons directement la réunion, quel est votre besoin ?" }
+            { id: '1.0', text: "Bonjour, Monsieur. Commençons directement la réunion, quel est votre besoin ?" }
        ],
        next: function (linePicked) {
             return "2";
@@ -285,13 +285,139 @@ function dialogue_ux_client_spec(){
 
 function dialogue_ux_client_feedback(){
   return [{
-
+    id: '0',
+    speaker: 'Client',
+    type: 'inactive',
+    lines: [
+         { id: '0.0', text: "Où en sommes-nous ?" }
+    ],
+    next: function (linePicked) {
+         return "1";
+    }
+  }, {
+       id: '1',
+       speaker: 'Vous',
+       type: 'inactive',
+       lines: [
+            { id: '1.0', text: "J’ai terminé la maquette, nous allons pouvoir la tester ensemble !" }
+       ],
+       next: function (linePicked) {
+            return "2";
+       }
+  }, {
+       id: '2',
+       speaker: 'Client',
+       type: 'inactive',
+       lines: [
+            { id: '2.0', text: "Voyons voir votre maquette."}
+       ],
+       next: function (linePicked) {
+            return "3";
+       }
+  }, {
+       id: '3',
+       speaker: 'info',
+       type: 'inactive',
+       lines: [
+            { id: '3.0', text: "Phase de test"}
+       ],
+       next: function (linePicked) {
+            return "4";
+       }
+  }, {
+    id: '4',
+    speaker: 'Client',
+    type: 'inactive',
+    lines: [
+         { id: '4.0', text: "Okay c’est pas mal, j’aime l’idée générale et le flow que ça dégage." }
+    ],
+    next: function (linePicked) {
+         return "5";
+    }
+  }, {
+       id: '5',
+       speaker: 'Vous',
+       type: 'inactive',
+       lines: [
+            { id: '5.0', text: "Super, merci. Pourriez-vous remplir ce questionnaire qui m’aidera à améliorer votre site en fonction de vos idées ?" }
+       ],
+       next: function (linePicked) {
+            return "6";
+       }
+  }, {
+       id: '6',
+       speaker: 'Client',
+       type: 'inactive',
+       lines: [
+            { id: '6.0', text: "Aucun souci."}
+       ],
+       next: function (linePicked) {
+            return "7";
+       }
+  }, {
+       id: '7',
+       speaker: 'info',
+       type: 'inactive',
+       lines: [
+            { id: '7.0', text: "Cinq minutes plus tard, vous récupérez le questionnaire dûment rempli."}
+       ],
+       next: function (linePicked) {
+            return "-1";
+       }
   }];
 }
 
 function dialogue_ux_designer_end(){
   return [{
-
+    id: '0',
+    speaker: 'Head UX Designer',
+    type: 'inactive',
+    lines: [
+         { id: '0.0', text: "Alors où en es-tu ?" }
+    ],
+    next: function (linePicked) {
+         return "1";
+    }
+  }, {
+       id: '1',
+       speaker: 'Vous',
+       type: 'inactive',
+       lines: [
+            { id: '1.0', text: "J’ai montré la maquette au client, je lui ai fait faire un test, puis il a rempli le questionnaire que j’avais préparé." }
+       ],
+       next: function (linePicked) {
+            return "2";
+       }
+  }, {
+       id: '2',
+       speaker: 'Head UX Designer',
+       type: 'inactive',
+       lines: [
+            { id: '2.0', text: "Très bien, qu’en a-t-il pensé ?"}
+       ],
+       next: function (linePicked) {
+            return "3";
+       }
+  }, {
+       id: '3',
+       speaker: 'info',
+       type: 'Vous',
+       lines: [
+            { id: '3.0', text: "Il a plutôt aimé le design global, et il m’a précisé qu’il aimerait pouvoir écrire des articles à propos de son ébénisterie. Il pensait aussi que le système de filtres n’était pas tout à fait clair, et qu’on pourrait donc l’améliorer."}
+       ],
+       next: function (linePicked) {
+            return "4";
+       }
+  }, {
+    id: '4',
+    speaker: 'Head UX Designer',
+    type: 'inactive',
+    lines: [
+         { id: '4.0', text: "D’accord super, c’est un bon début ! Je suis confiant sur la suite du projet grâce à votre travail. On reprendra ça demain, bonne soirée !" }
+    ],
+    next: function (linePicked) {
+         return "-1";
+    }
   }];
 }
 
