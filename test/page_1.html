@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/lity.css" />
+</head>
+<body>
+<div id="image">
+<img src="images/test_2.jpeg" height="100%" usemap="#image-map">
+
+<map name="image-map">
+    <area href="index.html" coords="236,127,186,84" shape="rect">
+</map>
+
+</div>
+<div id="consignes">
+</div>
+<div id="inline" style="overflow:auto;background:#FDFDF6;padding:20px;max-width:100%;border-radius:6px" class="lity-hide">
+Inline content
+</div>
+<script src="js/consignes.js"></script>
+<script src="js/imageMapResizer.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/lity.js"></script>
+<script>
+afficheMessage("Vous êtes entrée, bienvenu");
+imageMapResize();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+#dialogue {
+     background-color:white;
+     visibility: hidden;
+     top : 60vh;
+     left: 10vw;
+     height:20vh;
+     width: 80vw;
+     position:absolute;
+}
