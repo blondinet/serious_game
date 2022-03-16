@@ -114,7 +114,7 @@ function dialogue_fin_tuto(){
           type: 'inactive',
           action: 2,
           lines: [
-               { id: '0.0', text: "Donner un cafe" }
+               { id: '0.0', text: "Donner un café." }
           ],
           next: function (linePicked) {
                return "1";
@@ -199,7 +199,7 @@ function dialogue_tuto(){
           speaker: 'RH',
           type: 'inactive',
           lines: [
-               { id: '0.0', text: "... Mh ? Qu’est-ce que vous voulez ?" }
+               { id: '0.0', text: "... Mh ? Que voulez-vous ?" }
           ],
           next: function (linePicked) {
                return "1";
@@ -219,7 +219,7 @@ function dialogue_tuto(){
           speaker: 'RH',
           type: 'inactive',
           lines: [
-               { id: '2.0', text: "Je suis fatiguée, je me prendrais bien un petit remontant, sans cela je crois ne pas pouvoir vous aider…" }
+               { id: '2.0', text: "Je suis fatiguée, je me prendrais bien un petit remontant. Sans cela, je crois ne pas pouvoir vous aider…" }
           ],
           next: function (linePicked) {
                return "3";
@@ -229,13 +229,13 @@ function dialogue_tuto(){
           speaker: 'Vous',
           type: 'interactive',
           lines: [
-               { id: '3.0', text: "Je vais acheter un café (une machine est dans le couloir)" },
-               { id: '3.1', text: "Je vous apporte de l’eau"},
-               { id: '3.2', text: "Je vous apporte un chocolat "}
+               { id: '3.0', text: "Je vais acheter un café." },
+               { id: '3.1', text: "Je vous apporte de l’eau."},
+               { id: '3.2', text: "Je vous apporte un chocolat."}
           ],
           next: function (linePicked) {
                if (linePicked === '3.0') {
-                    return "-1";
+                    return "5";
                }
                if (linePicked === '3.1') {
                     return "4";
@@ -247,10 +247,20 @@ function dialogue_tuto(){
           speaker: 'RH',
           type: 'inactive',
           lines: [
-               { id: '4.0', text: "Je prefère autre chose" }
+               { id: '4.0', text: "Je prefère autre chose." }
           ],
           next: function (linePicked) {
                return "3";
+          }
+     }, {
+          id: '5',
+          speaker: 'RH',
+          type: 'inactive',
+          lines: [
+               { id: '5.0', text: "Il y a une machine dans le couloir." }
+          ],
+          next: function (linePicked) {
+               return "-1";
           }
      },]
 }
@@ -263,7 +273,7 @@ function dialogue_tuto_2(){
           type: 'inactive',
           action: 1,
           lines: [
-               { id: '0.0', text: "Vous prenez un café en échange d'un dollars" }
+               { id: '0.0', text: "Vous prenez un café en échange d'un euro." }
           ],
           next: function (linePicked) {
                return "1";
@@ -273,7 +283,7 @@ function dialogue_tuto_2(){
           speaker: 'Vous',
           type: 'inactive',
           lines: [
-               { id: '1.0', text: "Le café est servi" }
+               { id: '1.0', text: "Le café est servi." }
           ],
           next: function (linePicked) {
                return "-1";
@@ -303,7 +313,7 @@ function dialogue_ux(){
           speaker: 'info',
           type: 'inactive',
           lines: [
-               { id: '0.0', text: "Bienvenue dans notre entreprise." }
+               { id: '0.0', text: "Bienvenu dans notre entreprise." }
           ],
           next: function (linePicked) {
                return "1";
