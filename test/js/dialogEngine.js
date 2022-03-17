@@ -90,6 +90,9 @@ function affiche_dialogue(Dialog, num){
                          suppr_ecran_dialogue(Dialog);
                          container.empty();
                     }
+                    else if (next == "-1") {
+
+                    }
                     else{
                          affiche_dialogue(Dialog, next);
                     }

@@ -89,7 +89,18 @@ function dialogue_maquette(){
     next: function (linePicked) {
          return "-1";
     }
-  }]
+}, {
+     id: '1',
+     speaker: 'info',
+     type: 'inactive',
+     action: 10,
+     lines: [
+          { id: '1.0', text: "Bravo, tu es arrivé à la fin du jeu." }
+     ],
+     next: function (linePicked) {
+          return "-2";
+     }
+}]
 }
 
 function dialogue_ux_welcome(){
