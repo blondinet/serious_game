@@ -87,7 +87,7 @@ function dialogue_maquette(){
          { id: '0.0', text: "Mini-jeu : vous créez les maquettes." }
     ],
     next: function (linePicked) {
-         return "-1";
+         return "1";
     }
 }, {
      id: '1',

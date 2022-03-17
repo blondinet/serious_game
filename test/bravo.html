@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="fr" style="width:100%; height:100%; margin:0px">
+     <head>
+          <meta charset="utf-8">
+          <link rel="stylesheet" href="css/style.css" />
+          <link rel="stylesheet" href="css/lity.css" />
+          <link rel="stylesheet" href="css/dialogue.css" />
+
+          <link rel="shortcut icon" href="./">
+
+          <script src="js/consignes.js"></script>
+          <script src="js/imageMapResizer.js"></script>
+          <script src="js/jquery.js"></script>
+          <script src="js/lity.js"></script>
+          <script src="js/dialog.js"></script>
+          <script src="js/dialogEngine.js"></script>
+          <script src="js/bravo.js"></script>
+     </head>
+     <body style="width:100%; height:100%; margin:0px">
+          <div style="width:100%; height:100%; background-color: black; color:white; text-align:center">
+               <div style="width:50%; margin:auto; padding-top:15%; height:50%;">
+                    Bravo, vous avez gagné
+               </div>
+
+               <img id="image_rigolo" class="rotate" src="./images/nous_dos.png" style="position:absolute; height:80vh; width:auto; top:40vh; right:60vh"/>
+
+               <a href="index.html">
+                    <button  style="width :15%; height: 5%; cursor: help;">
+                         Recommencer
+                    </button>
+               </a>
+          </div>
+
+          <!-- <div id="consignes"> -->
+          <!-- </div> -->
+          <div id="inline" style="overflow:auto;background:#FDFDF6;padding:20px;max-width:100%;border-radius:6px" class="lity-hide">
+               Inline content
+          </div>
+
+
+
+
+          <script>
+               traitement();
+               // afficheMessage("Selectionner porte");
+               imageMapResize();
+
+          </script>
+     </body>
+</html>

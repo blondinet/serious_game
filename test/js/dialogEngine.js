@@ -90,8 +90,8 @@ function affiche_dialogue(Dialog, num){
                          suppr_ecran_dialogue(Dialog);
                          container.empty();
                     }
-                    else if (next == "-1") {
-
+                    else if (next == "-2") {
+                         window.location.href = "bravo.html";
                     }
                     else{
                          affiche_dialogue(Dialog, next);
