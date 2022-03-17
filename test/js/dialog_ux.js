@@ -55,6 +55,9 @@ function dialog(num_dialog){
               if(sessionStorage.getItem("note_retour") == 1) {
                   return dialogue_ux_designer_end();
               }
+              if(sessionStorage.getItem("maquette") == 1) {
+                  return dialogue_ux_designer_maquette();
+              }
               if(sessionStorage.getItem("instructions") == 1) {
                   return dialogue_ux_designer_help();
               }
@@ -75,6 +78,21 @@ function dialog(num_dialog){
                   return dialogue_maquette();
               }
      }
+}
+
+
+function dialogue_ux_designer_maquette(){
+  return [{
+    id: '0',
+    speaker: 'Head UX Designer',
+    type: 'inactive',
+    lines: [
+         { id: '0.0', text: "Si tu as terminé les maquettes, tu peux retourner voir le client pour obtenir ses retours." }
+    ],
+    next: function (linePicked) {
+         return "-1";
+    }
+  }]
 }
 
 function dialogue_maquette(){
@@ -209,7 +227,7 @@ function dialogue_ux_designer_help(){
        speaker: 'Head UX Designer',
        type: 'inactive',
        lines: [
-            { id: '3.0', text: "Tu vas maintenant pouvoir passer au maquettage. Un ordinateur est à ta disposition dans le bureau de droite." }
+            { id: '3.0', text: "Tu vas maintenant pouvoir passer au maquettage. Un ordinateur est à ta disposition sur la droite." }
        ],
        next: function (linePicked) {
             return "-1";
