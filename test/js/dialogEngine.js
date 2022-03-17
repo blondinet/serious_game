@@ -60,6 +60,7 @@ function do_action(action){
      }
      else if (action == 10) {
           sessionStorage.setItem("instructions", 0);
+          sessionStorage.setItem("maquette", 1);
      }
 }
 
