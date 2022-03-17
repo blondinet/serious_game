@@ -1,3 +1,13 @@
+function traitement(){
+     sessionStorage.setItem("cafe", 0);
+     sessionStorage.setItem("monnaie", 0);
+     sessionStorage.setItem("magazine", 0);
+     sessionStorage.setItem("specifications", 0);
+     sessionStorage.setItem("maquette", 0);
+     sessionStorage.setItem("note_retour", 0);
+     sessionStorage.setItem("instructions", 0);
+}
+
 
 function create_dialog(tab_nodes) {
      var Dialog = {
@@ -42,21 +52,44 @@ function create_dialog(tab_nodes) {
 function dialog(num_dialog){
      switch(num_dialog){
           case 1:
-               return dialogue_ux_welcome();
+              if(sessionStorage.getItem("note_retour") == 1) {
+                  return dialogue_ux_designer_end();
+              }
+              if(sessionStorage.getItem("instructions") == 1) {
+                  return dialogue_ux_designer_help();
+              }
+              else {
+                  return dialogue_ux_welcome();
+              }
           break;
           case 2:
-               return dialogue_ux_designer_help();
+              if(sessionStorage.getItem("maquette") == 1) {
+                  return dialogue_ux_client_feedback();
+                }
+              else {
+                  return dialogue_ux_client_spec();
+              }
           break;
           case 3:
-               return dialogue_ux_client_spec();
-          break;
-          case 4:
-               return dialogue_ux_client_feedback();
-          break;
-          case 5:
-               return dialogue_ux_designer_end();
-          break;
+              if(sessionStorage.getItem("specifications") == 1) {
+                  return dialogue_maquette();
+              }
      }
+}
+
+function dialogue_maquette(){
+  return [{
+    id: '0',
+    speaker: 'info',
+    type: 'inactive',
+    action: 10,
+    lines: [
+         { id: '0.0', text: "Mini-jeu : vous créez les maquettes." }
+    ],
+    next: function (linePicked) {
+         return "-1";
+    }
+  }]
 }
 
 function dialogue_ux_welcome(){
@@ -84,6 +117,7 @@ function dialogue_ux_welcome(){
        id: '2',
        speaker: 'Vous',
        type: 'interactive',
+       action: 9,
        lines: [
             { id: '2.0', text: "Qu’est-ce qu’une spécification fonctionnelle ?" },
             { id: '2.1', text: "Qu’est-ce qu’une maquette ?"},
@@ -155,7 +189,7 @@ function dialogue_ux_designer_help(){
             { id: '1.1', text: "Oui je les ai !"}
        ],
        next: function (linePicked) {
-            if (linePicked === '2.0') {
+            if (linePicked === '1.0') {
                  return "2";
             }
             return "3";
@@ -165,7 +199,7 @@ function dialogue_ux_designer_help(){
        speaker: 'Head UX Designer',
        type: 'inactive',
        lines: [
-            { id: '2.0', text: "Il est dans la pièce de *droite*, ne le fais pas attendre !" }
+            { id: '2.0', text: "Il est dans la pièce de gauche, ne le fais pas attendre !" }
        ],
        next: function (linePicked) {
             return "-1";
@@ -175,7 +209,7 @@ function dialogue_ux_designer_help(){
        speaker: 'Head UX Designer',
        type: 'inactive',
        lines: [
-            { id: '3.0', text: "Tu vas maintenant pouvoir passer au maquettage. Un ordinateur est à ta disposition dans le bureau de *gauche*." }
+            { id: '3.0', text: "Tu vas maintenant pouvoir passer au maquettage. Un ordinateur est à ta disposition dans le bureau de droite." }
        ],
        next: function (linePicked) {
             return "-1";
@@ -218,6 +252,7 @@ function dialogue_ux_client_spec(){
        id: '3',
        speaker: 'Vous',
        type: 'interactive',
+       action: 4,
        lines: [
             { id: '3.0', text: "Quel est votre public cible ?" },
             { id: '3.1', text: "Voulez-vous vendre vos œuvres sur ce site ? Ou serait-ce plutôt un site d’exposition ?"},
@@ -348,6 +383,7 @@ function dialogue_ux_client_feedback(){
        id: '6',
        speaker: 'Client',
        type: 'inactive',
+       action: 8,
        lines: [
             { id: '6.0', text: "Aucun souci."}
        ],

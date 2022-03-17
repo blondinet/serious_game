@@ -40,6 +40,27 @@ function do_action(action){
      else if (action == 3) {
           sessionStorage.setItem("telephone", 1);
      }
+     else if (action == 4) {
+          sessionStorage.setItem("specifications", 1);
+     }
+     else if (action == 5) {
+          sessionStorage.setItem("specifications", 0);
+     }
+     else if (action == 6) {
+          sessionStorage.setItem("maquette", 1);
+     }
+     else if (action == 7) {
+          sessionStorage.setItem("maquette", 0);
+     }
+     else if (action == 8) {
+          sessionStorage.setItem("note_retour", 1);
+     }
+     else if (action == 9) {
+          sessionStorage.setItem("instructions", 1);
+     }
+     else if (action == 10) {
+          sessionStorage.setItem("instructions", 0);
+     }
 }
 
 function affiche_dialogue(Dialog, num){
@@ -82,7 +103,7 @@ function affiche_dialogue(Dialog, num){
                     newLine.style.cssText = "width:50%;margin: 0px;";
                }
                newLine.style.cssText = "cursor: help;";
-               newLine.onmouseover = function(){ this.style.backgroundColor ="purple" };
+               newLine.onmouseover = function(){ this.style.backgroundColor ="#FFFFCC" };
                newLine.onmouseout = function(){ this.style.backgroundColor ="" };
 
 

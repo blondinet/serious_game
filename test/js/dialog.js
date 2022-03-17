@@ -31,9 +31,9 @@ function AffichageHUD(){
 function traitement(){
      sessionStorage.setItem("cafe", 0);
      sessionStorage.setItem("monnaie", 1);
-     sessionStorage.setItem("fiche", "");
-     sessionStorage.setItem("document_speciale", "");
      sessionStorage.setItem("magazine", "");
+     sessionStorage.setItem("specifications", "");
+     sessionStorage.setItem("maquette", "");
      sessionStorage.setItem("note_retour", "");
 }
 
