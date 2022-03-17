@@ -19,11 +19,15 @@ function AffichageHUD(){
      "<img src='./images/inventaire.png' style='opacity: 0.75;'>";
 
      if(sessionStorage.getItem("cafe") == 1) {
-          back += "<img id='cafe' src='./images/cafe.png' style='position:absolute; left:5vw; top:13vh; max-width: 6vw; height: auto'/>";
+          back += "<img id='cafe' src='./images/cafe.png' style='position:absolute; left:5vw; top:17vh; max-width: 6vw; height: auto'/>";
      }
      back += "</img></div>";
 
+     // back += "<div id='conteneurPiece' style='position:absolute; left:2vw; top:20vh; width: 20vw; height: auto; background-color:white;'>";
+     // back += "<img id='piece' src='./images/piece.png' style='position:absolute; left:5vw; top:17vh; max-width: 6vw; height: auto'/>";
+     // back += "<div>";
 
+     // $("#nbpieces").html("ok")
 
      $("html").append(back);
 }

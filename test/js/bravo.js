@@ -2,19 +2,19 @@
 // transform: scaleX(-1);
 
 
-var i = setInterval(bravo, 5);
+var i = setInterval(bravo, 500);
 
 // bravo()
 async function bravo(){
      var elem = $("#image_rigolo")
      clearInterval(id);
-     id = setInterval(frame, 10);
+     var id = setInterval(frame, 500);
      function frame() {
 
-          if ($("#image_rigolo").hasClass("flipped")) {
-               elem.removeClass('flipped');
-          }else {
+          if (!$("#image_rigolo").hasClass("flipped")) {
                elem.addClass('flipped');
+          }else {
+               elem.removeClass('flipped');
           }
      }
 }

@@ -1,6 +1,6 @@
 function traitement(){
      sessionStorage.setItem("cafe", 0);
-     sessionStorage.setItem("monnaie", 0);
+     sessionStorage.setItem("monnaie", 1);
      sessionStorage.setItem("magazine", 0);
      sessionStorage.setItem("specifications", 0);
      sessionStorage.setItem("maquette", 0);
